@@ -1,0 +1,9 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/w7painel/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Lista de Vídeos CadastradOs</h2>
+<ul>
+    <li>Meu vídeo do Youtube [ @Html.ActionLink("Editar Vídeo", "Update", "Video", new { area = "w7painel" }, null) | @Html.ActionLink("Excluir Video", "Excluir", "Video", new { area = "w7painel" }, null) ]</li>
+</ul>

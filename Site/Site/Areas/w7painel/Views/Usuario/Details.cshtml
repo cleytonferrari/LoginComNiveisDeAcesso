@@ -1,0 +1,41 @@
+﻿@model Site.Areas.w7painel.Models.Usuario
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/w7painel/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Usuario</legend>
+
+    <div class="display-label">Nome</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Nome)
+    </div>
+
+    <div class="display-label">Login</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Login)
+    </div>
+
+    <div class="display-label">Pass</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Pass)
+    </div>
+
+    <div class="display-label">Email</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Email)
+    </div>
+
+    <div class="display-label">Grupo</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Grupo.Nome)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

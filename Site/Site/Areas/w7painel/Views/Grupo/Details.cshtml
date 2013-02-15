@@ -1,0 +1,31 @@
+﻿@using Site.Areas.w7painel.Models
+@using Site.Areas.w7painel.Models.ViewModel
+@model Site.Areas.w7painel.Models.Grupo
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/w7painel/Views/Shared/_Layout.cshtml";
+}
+<h2>
+    Details</h2>
+<fieldset>
+    <legend>Grupo</legend>
+    <div class="display-label">
+        Nome</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Nome)
+    </div>
+    <div class="display-field">
+        @foreach (var plugin in Model.Permissoes.Select(x => x.Plugin).Distinct().ToList() )
+        {
+            <em>@plugin.Nome</em><br />
+            foreach (var permissao in Model.Permissoes.Where(x => x.Plugin.Id == plugin.Id).ToList())
+            {
+                @permissao.Nome<br />
+            }
+        }
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
